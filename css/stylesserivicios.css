@@ -1,0 +1,598 @@
+/* Marca (logo + texto) */
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  align-items: flex-start; /* sube el contenido al tope */
+  padding-top: 15px;             /* quitamos padding extra */
+}
+
+.brand-text {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+body {
+	font-family:'Open Sans', Arial, sans-serif;
+	font-size:14px;
+	font-weight:300;
+	line-height:1.6em;
+	color:#fff;
+	background-color:#fff;
+	overflow-x:hidden;
+}
+
+hi,h4,h6,h7 {
+	color:#272727;
+	line-height:1.1em;
+
+}
+
+h1{
+ font-size: 25px;
+  margin-top: 50px;
+}
+
+
+h2{
+  color: #005580;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h5{
+  font-weight: bold;
+  color: #005580;
+}
+
+h3{
+  color: white;
+}
+
+img.img1{
+  border-radius: 100px;
+  height: 200px;
+  width:200px;
+}
+
+img.img2{
+  border-radius: 100px;
+}
+
+
+
+.btn {
+	border-radius:0;
+	margin-top:10px;
+	background-color: #0D47A1;
+	text-transform:uppercase;
+	border-color:#fff;
+	font-size:14px;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navbar-brand h1 {
+	margin-top:9px;
+	padding-top:5px;
+	float: left;	
+	font-size: 25px;	
+	color:#fff;	
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    padding: 0 0 0 15px;
+  }
+}
+
+.menu {
+	font-size:12px;
+	float:right;
+	text-transform:uppercase;
+	font-weight:600;	
+}
+
+.navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 0px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+.menu ul.nav-tabs li {
+	color:#fff;	
+}
+
+.nav-tabs {
+	border-bottom: 0;
+}
+.nav-tabs > li {
+	float: left;
+	margin-bottom: 0;
+}
+
+.nav-tabs > li > a {	
+	border-radius:0;
+	color:#fff;
+	padding:30px;
+}
+
+.nav-tabs > li > a:hover {
+	color:#272727;
+	background:#fff;	
+} 
+
+.nav-tabs > li a.active {
+	color: #555;
+	cursor: default;
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-bottom-color:#fff;
+}
+
+.navbar-default {
+	background-color: #0D47A1;
+	border-color:#0D47A1;
+}
+
+
+.form-inline {
+	margin-top:50px;	
+}
+
+a{
+  color: white;
+}
+
+p{
+  color: black;
+}
+
+p.footer-p{
+color: white;
+}
+
+h3.mision{
+  color: #005580;
+  display: block;      /* necesario para margin:auto */
+   font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative; 
+  margin-left: 200px;
+}
+
+.servicios {
+  padding: 50px 20px;
+}
+
+.containerServicio {
+  max-width: 900px;
+  margin-left: 60px;
+}
+
+div.col-md-6{
+ background-color:#f0f0f0;
+}
+
+div.col-md-6.testimonial{
+  background-color: white;
+}
+
+.container-objetivo {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.texto {
+  flex: 1;
+}
+
+.texto h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #005580;
+  margin-bottom: 20px;
+}
+
+.texto p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.galeria {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+.servicios h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #002855; /* Azul oscuro */
+  margin-bottom: 20px;
+}
+
+.lista-servicios {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.lista-servicios li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.lista-servicios li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #005580; /* Azul check */
+  font-weight: bold;
+}
+
+.lista-servicios .titulo {
+  font-weight: 700;
+}
+
+.cta a {
+  color: #3b2fb6; 
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}
+
+p.descripcion{
+color: white;
+}
+
+div.row.mt-5{
+  margin-top: 60px !important;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0D47A1;
+  color: white;
+  margin-top: 50px;
+  padding: 30px 20px;
+}
+
+/* Contenedor del footer con tres columnas */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Logo del footer */
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Títulos del footer */
+footer h3 {
+  margin-bottom: 10px;
+}
+
+/* Lista de servicios */
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+/* Íconos sociales */
+.social-icons a {
+  margin: 0 8px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Línea de copyright */
+.copy {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 10px;
+}
+
+p.copy{
+  color: white;
+}
+
+
+/* Estilo para la leyenda debajo del logo */
+.footer-container .col:first-child p {
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.contact-form h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-form p {
+  margin: 5px 0;
+}
+
+.small-text {
+  font-size: 13px;
+  color: #666;
+}
+
+form {
+  margin-top: 15px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.input-group .icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #0a4fa3;
+}
+
+.input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #0a4fa3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #083d82;
+}
+
+h3.h3-serv{
+  margin-left: 40px
+}
+
+/* Sección servicios */
+/* Ajustes de la sección servicios (mantén tus reglas anteriores) */
+.servicios {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.servicios h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #00040a;
+}
+
+.servicios p {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  color: #444;
+}
+
+/* Grid de tarjetas: responsive */
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+/* Tarjetas */
+.card {
+  background: #f1f9f9;
+  border-radius: 12px;
+  padding: 28px 22px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Título de tarjeta */
+.card h3 {
+  color: #00040a;
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Descripción dentro de tarjeta */
+.card p {
+  color: #333;
+  line-height: 1.45;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/* --- Quitamos cualquier estilo de botón dentro de tarjetas --- */
+/* Si aún existen botones internos, los ocultamos */
+.card button {
+  display: none !important;
+}
+
+/* Contenedor del botón único al final, centrado */
+.more-info-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* Botón principal "Más información" */
+.more-info-btn {
+  display: inline-block;
+  background-color: #0D47A1;   /* color solicitado */
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(13,71,65,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.more-info-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(13,71,65,0.22);
+}
+
+/* Responsive: reducir padding/tamaño en pantallas pequeñas */
+@media (max-width: 600px) {
+  .navbar-brand img { height: auto; max-height: 70px; } /* si logotipo grande */
+  .card { padding: 18px; }
+  .more-info-btn { width: 80%; padding: 12px; }
+}
+
+/* Imagen dentro de cada tarjeta, centrada entre título y texto */
+.card-img {
+  display: block;
+  margin: 14px auto;        
+  max-width: 55%;           
+  height: 100px;            
+  object-fit: contain;      
+  background: transparent;
+}
+
+/* Si prefieres que las imágenes sean un poco más grandes en pantallas grandes: */
+@media (min-width: 1200px) {
+  .card-img {
+    max-width: 60%;
+    height: 120px;
+  }
+}
+
+/* En pantallas pequeñas, reducimos altura para no romper el diseño */
+@media (max-width: 600px) {
+  .card-img {
+    max-width: 70%;
+    height: 80px;
+  }
+
+  .more-info-btn {
+    width: 90%;
+  }
+}
+
+/* ===== SUBMENÚ EN SERVICIOS ===== */
+.navbar-nav > .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  background-color: #0D47A1; /* color navbar */
+  border-radius: 6px;
+  border: none;
+  padding: 0;
+  min-width: 200px;
+}
+
+.dropdown-menu > li > a {
+  color: white !important;
+  padding: 12px 20px;
+  display: block;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #083d82;
+  color: #f1c40f !important;
+}
