@@ -1,0 +1,121 @@
+/* Estilos específicos para Gestión de Servicios */
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.services-table th,
+.services-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.services-table th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+
+.tabla-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.form-stacked {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.imagen-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.image-box {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #0056b3;
+    color: white;
+    text-decoration: none;
+}
+
+.btn.eliminar {
+    background: #dc3545;
+}
+
+.btn.eliminar:hover {
+    background: #c82333;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para la autenticación */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
