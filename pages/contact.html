@@ -169,6 +169,22 @@
 
     <p class="copy">Copyright ©2025 TecnoApps | Todos los derechos reservados</p>
   </footer>
+  <script>
+  // Verificar si el usuario está logueado al cargar la página
+  document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem("usuarioLogueado")) {
+          window.location.href = "login.html";
+      }
+  });
+
+  // Función para cerrar sesión
+  function cerrarSesion() {
+      if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+          localStorage.removeItem("usuarioLogueado");
+          window.location.href = "login.html";
+      }
+  }
+  </script>
 
 </body>
 

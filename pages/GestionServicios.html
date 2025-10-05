@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>TecnoApps</title>
-
+  <title>TecnoApps - Gestión de Servicios</title>
   <!-- Bootstrap -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -15,220 +12,352 @@
   <link href="../css/animate.min.css" rel="stylesheet">
   <link href="../css/estilo.css" rel="stylesheet"/>
   <link href="../css/style.css" rel="stylesheet"/>
+  <link href="../css/gestion-servicios.css" rel="stylesheet"/>
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header id="header">
-    <nav class="navbar navbar-default navbar-static-top" role="banner">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar"
-            aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <!-- Logo y nombre -->
-          <a class="navbar-brand" href="../pages/index.html">
-            <img src="../img/logo_transparente.png" alt="Logo" height="100px">
-            <span class="brand-text">TecnoApps</span>
-          </a>
-        </div> <!-- /.navbar-header -->
-
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <div class="menu">
-            <ul class="nav nav-tabs navbar-left" role="tablist">
-              <li><a href="../pages/servicios.html">Servicios</a></li>
-              <li><a href="../pages/GestionServicios.html">Gestión de servicios</a></li>
-              <li><a href="../pages/contact.html">Contáctanos</a></li>
-              <li role="presentation"><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
-            </ul>
-          </div>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
+      <nav class="navbar navbar-default navbar-static-top" role="banner">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <!-- Logo y nombre -->
+                  <a class="navbar-brand" href="../pages/index.html">
+                      <img src="../img/logo_transparente.png" alt="Logo" height="100px">
+                      <span class="brand-text">TecnoApps</span>
+                  </a>
+              </div>
+              <!-- /.navbar-header -->
+              <!-- Menú -->
+              <div class="collapse navbar-collapse" id="main-navbar">
+                  <div class="menu">
+                      <ul class="nav nav-tabs navbar-left" role="tablist">
+                          <li><a href="../pages/servicios.html">Servicios</a></li>
+                          <li><a href="../pages/GestionServicios.html">Gestión de servicios</a></li>
+                          <li><a href="../pages/contact.html">Contáctanos</a></li>
+                          <li role="presentation"><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                      </ul>
+                  </div>
+              </div><!-- /.navbar-collapse -->
+          </div><!-- /.container -->
+      </nav>
   </header>
 
   <!-- MAIN -->
   <main class="container">
-    <h2>Gestión de servicios</h2>
-    <button class="btn">➕ Agregar servicio</button>
+      <h2>Gestión de servicios</h2>
+      <button class="btn" id="btnNuevoServicio">➕ Agregar servicio</button>
 
-    <!-- FORM apilado -->
-    <form class="form-stacked">
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" placeholder="">
-      </div>
-
-      <div class="form-group imagen-group">
-        <label for="imagen">Imagen:</label>
-        <div class="imagen-inputs">
-          <div class="image-box" id="preview">Sin imagen</div>
-          <div>
-            <input type="file" id="imagen" accept="image/*" hidden>
-            <button type="button" id="btn-imagen" onclick="document.getElementById('imagen').click()">Buscar
-              Imagen</button>
+      <!-- FORM apilado -->
+      <form class="form-stacked" id="formServicio">
+          <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" placeholder="Nombre del servicio" required>
           </div>
-        </div>
-      </div>
+          <div class="form-group imagen-group">
+              <label for="imagen">Imagen:</label>
+              <div class="imagen-inputs">
+                  <div class="image-box" id="preview">Sin imagen</div>
+                  <div>
+                      <input type="file" id="imagen" accept="image/*" hidden>
+                      <button type="button" id="btn-imagen" onclick="document.getElementById('imagen').click()">Buscar Imagen</button>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="precio">Precio:</label>
+              <input type="number" id="precio" placeholder="Precio del servicio" required min="0">
+          </div>
+          <div class="form-group">
+              <label for="cantidad">Cantidad:</label>
+              <input type="number" id="cantidad" placeholder="Cantidad disponible" required min="0">
+          </div>
+          <div class="form-group">
+              <label for="descripcion">Descripción:</label>
+              <textarea id="descripcion" placeholder="Descripción del servicio" required></textarea>
+          </div>
+          <div class="form-group">
+              <label for="promocion">Promoción:</label>
+              <select id="promocion" required>
+                  <option value="">Seleccionar</option>
+                  <option value="true">Sí</option>
+                  <option value="false">No</option>
+              </select>
+          </div>
+          <div class="form-buttons">
+              <button class="btn" type="submit" id="btnGuardar">Guardar servicio</button>
+              <button class="btn" type="button" id="btnCancelar">Cancelar</button>
+          </div>
+      </form>
 
-      <div class="form-group">
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" placeholder="">
+      <!-- TABLA con scroll -->
+      <h2>Listado de Servicios</h2>
+      <div class="table-container">
+          <table class="services-table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Imagen</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th>Descripción</th>
+                      <th>Promoción</th>
+                      <th>Acciones</th>
+                  </tr>
+              </thead>
+              <tbody id="tablaServicios">
+                  <!-- Los servicios se cargarán aquí dinámicamente -->
+              </tbody>
+          </table>
       </div>
-
-      <div class="form-group">
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" placeholder="">
-      </div>
-
-      <div class="form-group">
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="promocion">Promoción:</label>
-        <select id="promocion">
-          <option>Sí</option>
-          <option>No</option>
-        </select>
-      </div>
-
-      <div class="form-buttons">
-        <button class="btn" type="submit">Guardar servicio</button>
-        <button class="btn" type="button">Salir</button>
-      </div>
-    </form>
-
-    <!-- TABLA con scroll -->
-    <h2>Listado de Servicios</h2>
-    <div class="table-container">
-      <table class="services-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Imagen</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Descripción</th>
-            <th>Promoción</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Desarrollo Web</td>
-            <td><img src="../img/analisisDeDatos.png" alt="Desarrollo Web" class="tabla-img"></td>
-            <td>$1.200.000</td>
-            <td>5</td>
-            <td>Creación de sitios modernos</td>
-            <td>Sí</td>
-            <td><button class="btn">Editar</button> <button class="btn">Eliminar</button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Soporte en la nube</td>
-            <td><img src="../img/soporteEnLaNube.png" alt="Soporte en la nube" class="tabla-img"></td>
-            <td>$2.000.000</td>
-            <td>3</td>
-            <td>Soporte en servidores cloud</td>
-            <td>No</td>
-            <td><button class="btn">Editar</button> <button class="btn">Eliminar</button></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Ciberseguridad</td>
-            <td><img src="../img/ciberseguridad.png" alt="Ciberseguridad" class="tabla-img"></td>
-            <td>$1.500.000</td>
-            <td>7</td>
-            <td>Protección de infraestructuras</td>
-            <td>Sí</td>
-            <td><button class="btn">Editar</button> <button class="btn">Eliminar</button></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Licencia de Software</td>
-            <td><img src="../img/LicenciaSoftware.png" alt="Licencia de Software" class="tabla-img"></td>
-            <td>$300.000</td>
-            <td>15</td>
-            <td>Gestión de licencias</td>
-            <td>No</td>
-            <td><button class="btn">Editar</button> <button class="btn">Eliminar</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-container">
-      <div class="col">
-        <img src="../img/logo_transparente.png" alt="TecnoApps" class="footer-logo">
-        <h3>TecnoApps</h3>
-        <p class="desc">Empresa de desarrollo de aplicaciones móviles y web, diseño de páginas web y tiendas online en Colombia.</p>
+      <div class="footer-container">
+          <div class="col">
+              <img src="../img/logo_transparente.png" alt="TecnoApps" class="footer-logo">
+              <h3>TecnoApps</h3>
+              <p class="desc">Empresa de desarrollo de aplicaciones móviles y web, diseño de páginas web y tiendas online en Colombia.</p>
+          </div>
+          <div class="col">
+              <h3>Servicios</h3>
+              <ul>
+                  <li><a href="#">Desarrollo Web</a></li>
+                  <li><a href="#">Soporte en la nube</a></li>
+                  <li><a href="#">Ciberseguridad</a></li>
+                  <li><a href="#">Licencias de software</a></li>
+                  <li><a href="#">Consultoría IT</a></li>
+                  <li><a href="#">Análisis de datos</a></li>
+                  <li><a href="#">Optimización SEO</a></li>
+                  <li><a href="#">Soporte técnico</a></li>
+                  <li><a href="#">Redes y conectividad</a></li>
+                  <li><a href="#">Gestión de infraestructura</a></li>
+              </ul>
+          </div>
+          <div class="col">
+              <h3>Contacto</h3>
+              <p class="desc">3173968717</p>
+              <p class="desc">nmogollon@poligran.edu.co</p>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-whatsapp"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+          </div>
       </div>
-
-      <div class="col">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="#">Desarrollo Web</a></li>
-          <li><a href="#">Soporte en la nube</a></li>
-          <li><a href="#">Ciberseguridad</a></li>
-          <li><a href="#">Licencias de software</a></li>
-          <li><a href="#">Consultoría IT</a></li>
-          <li><a href="#">Análisis de datos</a></li>
-          <li><a href="#">Optimización SEO</a></li>
-          <li><a href="#">Soporte técnico</a></li>
-          <li><a href="#">Redes y conectividad</a></li>
-          <li><a href="#">Gestión de infraestructura</a></li>
-        </ul>
-      </div>
-
-      <div class="col">
-        <h3>Contacto</h3>
-        <p class="desc">3173968717</p>
-        <p class="desc">nmogollon@poligran.edu.co</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <p class="copy">Copyright ©2025 TecnoApps | Todos los derechos reservados</p>
+      <p class="copy">Copyright ©2025 TecnoApps | Todos los derechos reservados</p>
   </footer>
 
-  <!-- SCRIPT para preview -->
+  <!-- JavaScript -->
   <script>
-    document.getElementById('imagen').addEventListener('change', function (event) {
-      const file = event.target.files[0];
-      const preview = document.getElementById('preview');
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          preview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
-        }
-        reader.readAsDataURL(file);
-      } else {
-        preview.innerHTML = 'Sin imagen';
+      const API_URL = 'http://localhost:3000/api/servicios';
+      let servicios = [];
+      let editingId = null;
+
+      // Inicializar
+      document.addEventListener('DOMContentLoaded', function() {
+          cargarServicios();
+          configurarEventos();
+      });
+
+      function configurarEventos() {
+          // Formulario
+          document.getElementById('formServicio').addEventListener('submit', guardarServicio);
+          document.getElementById('btnNuevoServicio').addEventListener('click', nuevoServicio);
+          document.getElementById('btnCancelar').addEventListener('click', cancelarEdicion);
+          
+          // Preview de imagen
+          document.getElementById('imagen').addEventListener('change', function (event) {
+              const file = event.target.files[0];
+              const preview = document.getElementById('preview');
+              if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function (e) {
+                      preview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                  }
+                  reader.readAsDataURL(file);
+              } else {
+                  preview.innerHTML = 'Sin imagen';
+              }
+          });
       }
-    });
+
+      // Cargar servicios desde la API
+      async function cargarServicios() {
+          try {
+              const response = await fetch(API_URL);
+              servicios = await response.json();
+              renderizarTabla();
+          } catch (error) {
+              console.error('Error al cargar servicios:', error);
+              alert('Error al cargar servicios. Asegúrate de que el backend esté ejecutándose.');
+          }
+      }
+
+      // Renderizar tabla
+      function renderizarTabla() {
+          const tbody = document.getElementById('tablaServicios');
+          tbody.innerHTML = '';
+
+          if (servicios.length === 0) {
+              tbody.innerHTML = '<tr><td colspan="8" style="text-align: center;">No hay servicios registrados</td></tr>';
+              return;
+          }
+
+          servicios.forEach(servicio => {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                  <td>${servicio.id}</td>
+                  <td>${servicio.nombre}</td>
+                  <td>${servicio.imagen ? `<img src="http://localhost:3000${servicio.imagen}" alt="${servicio.nombre}" class="tabla-img">` : 'Sin imagen'}</td>
+                  <td>$${servicio.precio.toLocaleString()}</td>
+                  <td>${servicio.cantidad}</td>
+                  <td>${servicio.descripcion}</td>
+                  <td>${servicio.promocion ? 'Sí' : 'No'}</td>
+                  <td>
+                      <button class="btn editar" onclick="editarServicio(${servicio.id})">Editar</button>
+                      <button class="btn eliminar" onclick="eliminarServicio(${servicio.id})">Eliminar</button>
+                  </td>
+              `;
+              tbody.appendChild(tr);
+          });
+      }
+
+      // Nuevo servicio
+      function nuevoServicio() {
+          editingId = null;
+          limpiarFormulario();
+          document.getElementById('nombre').focus();
+      }
+
+      // Guardar servicio (crear o actualizar)
+      async function guardarServicio(e) {
+          e.preventDefault();
+          
+          const formData = new FormData();
+          formData.append('nombre', document.getElementById('nombre').value);
+          formData.append('precio', document.getElementById('precio').value);
+          formData.append('cantidad', document.getElementById('cantidad').value);
+          formData.append('descripcion', document.getElementById('descripcion').value);
+          formData.append('promocion', document.getElementById('promocion').value);
+          
+          const imagenInput = document.getElementById('imagen');
+          if (imagenInput.files[0]) {
+              formData.append('imagen', imagenInput.files[0]);
+          }
+
+          try {
+              let response;
+              if (editingId) {
+                  // Actualizar
+                  response = await fetch(`${API_URL}/${editingId}`, {
+                      method: 'PUT',
+                      body: formData
+                  });
+              } else {
+                  // Crear
+                  response = await fetch(API_URL, {
+                      method: 'POST',
+                      body: formData
+                  });
+              }
+
+              if (response.ok) {
+                  const servicioGuardado = await response.json();
+                  alert(`Servicio ${editingId ? 'actualizado' : 'creado'} correctamente`);
+                  limpiarFormulario();
+                  cargarServicios();
+              } else {
+                  throw new Error('Error en la respuesta del servidor');
+              }
+          } catch (error) {
+              console.error('Error al guardar servicio:', error);
+              alert('Error al guardar servicio');
+          }
+      }
+
+      // Editar servicio
+      async function editarServicio(id) {
+          const servicio = servicios.find(s => s.id === id);
+          if (!servicio) return;
+
+          editingId = id;
+          
+          // Llenar formulario
+          document.getElementById('nombre').value = servicio.nombre;
+          document.getElementById('precio').value = servicio.precio;
+          document.getElementById('cantidad').value = servicio.cantidad;
+          document.getElementById('descripcion').value = servicio.descripcion;
+          document.getElementById('promocion').value = servicio.promocion ? 'true' : 'false';
+          
+          // Mostrar imagen actual si existe
+          const preview = document.getElementById('preview');
+          if (servicio.imagen) {
+              preview.innerHTML = `<img src="http://localhost:3000${servicio.imagen}" alt="Preview">`;
+          } else {
+              preview.innerHTML = 'Sin imagen';
+          }
+          
+          // Cambiar texto del botón
+          document.getElementById('btnGuardar').textContent = 'Actualizar servicio';
+          
+          // Scroll al formulario
+          document.querySelector('form').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Eliminar servicio
+      async function eliminarServicio(id) {
+          if (!confirm('¿Estás seguro de que quieres eliminar este servicio?')) {
+              return;
+          }
+
+          try {
+              const response = await fetch(`${API_URL}/${id}`, {
+                  method: 'DELETE'
+              });
+
+              if (response.ok) {
+                  alert('Servicio eliminado correctamente');
+                  cargarServicios();
+              } else {
+                  throw new Error('Error al eliminar servicio');
+              }
+          } catch (error) {
+              console.error('Error al eliminar servicio:', error);
+              alert('Error al eliminar servicio');
+          }
+      }
+
+      // Limpiar formulario
+      function limpiarFormulario() {
+          document.getElementById('formServicio').reset();
+          document.getElementById('preview').innerHTML = 'Sin imagen';
+          document.getElementById('btnGuardar').textContent = 'Guardar servicio';
+          editingId = null;
+      }
+
+      // Cancelar edición
+      function cancelarEdicion() {
+          limpiarFormulario();
+      }
+
+      // Función cerrar sesión
+      function cerrarSesion() {
+          localStorage.removeItem("usuarioLogueado");
+          window.location.href = "login.html";
+      }
   </script>
 </body>
-
 </html>
