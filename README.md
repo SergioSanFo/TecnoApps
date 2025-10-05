@@ -10,6 +10,7 @@
 TecnoApps/
 ├── .vscode/                    # Configuración local para VSCode (Live Server, etc.)
 │   └── settings.json
+├── backend/                    # Nodejs y servicios Backend
 ├── css/                        # Archivos de estilos (Bootstrap, personalizados, etc.)
 ├── img/                        # Imágenes usadas en el sitio
 ├── js/                         # Scripts JavaScript
@@ -20,7 +21,6 @@ TecnoApps/
 │   └── servicios.html          # Página de servicios
 │   └── GestionServicios.html   # Gestión de servicios
 │   └── Resumenservicios.html   # Resumen de servicios
-│   └── usuariosServ.html       # Página de usuarios
 ├── README.md               # Este archivo
 ```
 
@@ -76,7 +76,3 @@ Para acceder al sistema como administrador:
 - **Contraseña:** `1234`
 
 ---
-
-## 📅 Próximas ajustes (TODO)
-
-- Versión con backend (Integrar DB).
