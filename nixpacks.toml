@@ -1,0 +1,24 @@
+[phases.setup]
+cmds = ["npm install"]
+
+[phases.build]
+cmds = ["echo 'Build completed'"]
+
+[phases.install]
+cmds = ["npm install --production"]
+
+[start]
+cmd = "npm start"
+
+[build.env]
+NODE_ENV = "production"
+
+# Configuración específica para Node.js
+[phases.setup]
+nixPkgs = ["nodejs-18.x", "python3"]
+
+# Variables de entorno para build
+[build.env]
+NODE_ENV = "production"
+NPM_CONFIG_PRODUCTION = "false"
+YARN_PRODUCTION = "false"
