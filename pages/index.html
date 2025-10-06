@@ -22,6 +22,11 @@
 </head>
 
 <body>
+  <script>
+      if (!localStorage.getItem("usuarioLogueado")) {
+        window.location.href = "login.html";
+      }
+  </script>
   <header id="header">
     <nav class="navbar navbar-default navbar-static-top" role="banner">
       <div class="container">
