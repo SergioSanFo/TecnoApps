@@ -1,19 +1,24 @@
 {
-  "name": "tecnoapps-backend",
+  "name": "tecnoapps",
   "version": "1.0.0",
-  "description": "Backend para TecnoApps",
+  "description": "TecnoApps - Desarrollo de aplicaciones y soluciones IT",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "npm install"
   },
+  "keywords": ["tecnoapps", "desarrollo", "aplicaciones", "colombia"],
+  "author": "TecnoApps",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "multer": "^1.4.5-lts.1",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "dotenv": "^16.3.1"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

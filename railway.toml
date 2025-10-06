@@ -1,9 +1,8 @@
 [build]
 builder = "nixpacks"
 
-[[services]]
-name = "web"
-run = "npm start"
+[start]
+cmd = "npm start"
 
 [build.env]
 NODE_ENV = "production"
