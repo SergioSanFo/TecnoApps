@@ -1,8 +1,13 @@
-const express = require('express');
-const fs = require('fs').promises;
-const path = require('path');
-const multer = require('multer');
-const { v4: uuidv4 } = require('uuid');
+import express from 'express';
+import fs from 'fs/promises';
+import path from 'path';
+import multer from 'multer';
+import { v4 as uuidv4 } from 'uuid';
+import fsSync from 'fs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
@@ -199,4 +204,4 @@ router.use((error, req, res, next) => {
   res.status(500).json({ error: error.message });
 });
 
-module.exports = router;
+export default router;
