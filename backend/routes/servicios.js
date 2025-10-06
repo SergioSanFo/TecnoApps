@@ -11,9 +11,6 @@ const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
-// Importar fs normal para funciones síncronas
-const fsSync = require('fs');
-
 // Configuración mejorada de multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
