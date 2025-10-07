@@ -1,204 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-  <title>TecnoApps</title>
-
-  <!-- Bootstrap -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/font-awesome.min.css">
-  <link rel="stylesheet" href="../css/animate.css">
-  <link href="../css/animate.min.css" rel="stylesheet">
-  <link href="../css/stylesserivicios.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TecnoApps - Servicios</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/stylesserivicios.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos para las tarjetas dinámicas */
+        .servicio-dinamico {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .servicio-dinamico:hover {
+            transform: translateY(-5px);
+        }
+        
+        .servicio-dinamico img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        
+        .servicio-dinamico h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .servicio-dinamico .precio {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+        
+        .servicio-dinamico .promocion {
+            background: #ff6b6b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .servicios-dinamicos-container {
+            margin: 30px 0;
+        }
+        
+        .seccion-titulo {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
-
 <body>
-<header id="header">
-  <nav class="navbar navbar-default navbar-static-top" role="banner">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-static-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../pages/index.html">
+                        <img src="../img/logo_transparente.png" alt="Logo" height="100px">
+                        <span class="brand-text">TecnoApps</span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <div class="menu">
+                        <ul class="nav nav-tabs navbar-left" role="tablist">
+                            <!-- Servicios con submenú -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Servicios <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../pages/Resumenservicios.html">Resumen de Servicios</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation"><a href="../pages/GestionServicios.html">Gestión de servicios</a></li>
+                            <li role="presentation"><a href="../pages/contact.html">Contáctanos</a></li>
+                            <li role="presentation"><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <a class="navbar-brand" href="../pages/index.html">
-          <img src="../img/logo_transparente.png" alt="Logo" height="100px">
-          <span class="brand-text">TecnoApps</span>
-        </a>
-      </div> 
+    <!-- Servicios -->
+    <section class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <p>
+            En TecnoApps ofrecemos soluciones tecnológicas adaptadas a tu negocio. Nuestros principales servicios incluyen soporte en la nube, desarrollo web, seguridad IT y consultoría IT.
+        </p>
 
-      <div class="collapse navbar-collapse" id="main-navbar">
-        <div class="menu">
-          <ul class="nav nav-tabs navbar-left" role="tablist">
-
-            <!-- Servicios con submenú -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                Servicios <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="../pages/Resumenservicios.html">Resumen de Servicios</a></li>
-              </ul>
-            </li>
-
-            <li role="presentation"><a href="../pages/GestionServicios.html">Gestión de servicios</a></li>
-            <li role="presentation"><a href="../pages/contact.html">Contáctanos</a></li>
-            <li role="presentation"><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
-          </ul>
+        <!-- Servicios Dinámicos desde la API -->
+        <div class="servicios-dinamicos-container">
+            <h3 class="seccion-titulo">Servicios Disponibles</h3>
+            <div class="grid-servicios" id="servicios-dinamicos">
+                <!-- Los servicios creados en el CRUD aparecerán aquí -->
+                <div class="cargando">Cargando servicios...</div>
+            </div>
         </div>
-      </div>
-    </div>
-</header>
 
-<!-- Servicios -->
-<section class="servicios">
-  <h2>Nuestros Servicios</h2>
-  <p>
-    En TecnoApps ofrecemos soluciones tecnológicas adaptadas a tu negocio.
-    Nuestros principales servicios incluyen soporte en la nube, desarrollo web, 
-    seguridad IT y consultoría IT.
-  </p>
+        <!-- Servicios Estáticos (los que ya tenías) -->
+        <h3 class="seccion-titulo">Nuestros Servicios Principales</h3>
+        <div class="grid-servicios">
+            <!-- tarjetas de servicios estáticas -->
+            <div class="card">
+                <h3>Soporte en la Nube</h3>
+                <img class="card-img" src="../img/soporte_nube.png" alt="Soporte en la Nube">
+                <p>Nuestro equipo está capacitado para brindarte soluciones en la nube que se adaptan a las necesidades de tu empresa.</p>
+            </div>
+            <div class="card">
+                <h3>Desarrollo web</h3>
+                <img class="card-img" src="../img/desarrollo_web.png" alt="Desarrollo web">
+                <p>Creamos aplicaciones web escalables y centradas en el usuario, garantizando una experiencia fluida y efectiva.</p>
+            </div>
+            <div class="card">
+                <h3>Ciberseguridad</h3>
+                <img class="card-img" src="../img/ciberseguridad.png" alt="Ciberseguridad">
+                <p>Protección integral contra amenazas digitales: asegura tus datos, sistemas y redes con monitoreo en tiempo real.</p>
+            </div>
+            <div class="card">
+                <h3>Licencias de software</h3>
+                <img class="card-img" src="../img/licencias.png" alt="Licencias de software">
+                <p>Gestión y provisión de licencias originales para garantizar el uso legal, seguro y actualizado de tus aplicaciones.</p>
+            </div>
+            <div class="card">
+                <h3>Consultoría IT</h3>
+                <img class="card-img" src="../img/consultoria.png" alt="Consultoría IT">
+                <p>Asesoría especializada para optimizar tu infraestructura tecnológica y alinear la estrategia con los objetivos del negocio.</p>
+            </div>
+            <div class="card">
+                <h3>Análisis de datos</h3>
+                <img class="card-img" src="../img/analisis_datos.png" alt="Análisis de datos">
+                <p>Transformamos tus datos en información clara y accionable para impulsar decisiones estratégicas.</p>
+            </div>
+            <div class="card">
+                <h3>Optimización SEO</h3>
+                <img class="card-img" src="../img/seo.png" alt="Optimización SEO">
+                <p>Mejoramos tu visibilidad en buscadores para atraer más tráfico orgánico y clientes potenciales a tu sitio web.</p>
+            </div>
+            <div class="card">
+                <h3>Soporte Técnico</h3>
+                <img class="card-img" src="../img/soporte_tecnico.png" alt="Soporte Técnico">
+                <p>Asistencia rápida y confiable para resolver incidencias y mantener tus sistemas siempre en funcionamiento.</p>
+            </div>
+            <div class="card">
+                <h3>Redes y Conectividad</h3>
+                <img class="card-img" src="../img/redes.png" alt="Redes y Conectividad">
+                <p>Diseño y gestión de infraestructuras de red seguras y eficientes para garantizar comunicación sin interrupciones.</p>
+            </div>
+            <div class="card">
+                <h3>Gestión de Infraestructura</h3>
+                <img class="card-img" src="../img/infraestructura.png" alt="Gestión de Infraestructura">
+                <p>Administramos y optimizamos tus recursos tecnológicos para garantizar disponibilidad, seguridad y rendimiento continuo.</p>
+            </div>
+        </div>
 
-  <div class="grid-servicios">
-    <!-- tarjetas de servicios -->
-    <div class="card">
-      <h3>Soporte en la Nube</h3>
-      <img class="card-img" src="../img/soporte_nube.png" alt="Soporte en la Nube">
-      <p>Nuestro equipo está capacitado para brindarte soluciones en la nube que se adaptan a las necesidades de tu empresa.</p>
-    </div>
+        <!-- Botón centrado al final -->
+        <div class="more-info-wrap">
+            <a class="more-info-btn" href="../pages/Resumenservicios.html">Más información</a>
+        </div>
+    </section>
 
-    <div class="card">
-      <h3>Desarrollo web</h3>
-      <img class="card-img" src="../img/desarrollo_web.png" alt="Desarrollo web">
-      <p>Creamos aplicaciones web escalables y centradas en el usuario, garantizando una experiencia fluida y efectiva.</p>
-    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="col">
+                <img src="../img/logo_transparente.png" alt="TecnoApps" class="footer-logo">
+                <h3>TecnoApps</h3>
+                <p class="footer-p">Empresa de desarrollo de aplicaciones móviles y web, diseño de páginas web y tiendas online en Colombia.</p>
+            </div>
+            <div class="col">
+                <h3 class="h3-serv">Servicios</h3>
+                <ul>
+                    <li><a href="#">Desarrollo Web</a></li>
+                    <li><a href="#">Soporte en la nube</a></li>
+                    <li><a href="#">Ciberseguridad</a></li>
+                    <li><a href="#">Licencias de software</a></li>
+                    <li><a href="#">Consultoría IT</a></li>
+                    <li><a href="#">Análisis de datos</a></li>
+                    <li><a href="#">Optimización SEO</a></li>
+                    <li><a href="#">Soporte técnico</a></li>
+                    <li><a href="#">Redes y conectividad</a></li>
+                    <li><a href="#">Gestión de infraestructura</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Contacto</h3>
+                <p class="footer-p">3173968717</p>
+                <p class="footer-p">nmogollon@poligran.edu.co</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copy">Copyright ©2025 TecnoApps | Todos los derechos reservados</p>
+    </footer>
 
-    <div class="card">
-      <h3>Ciberseguridad</h3>
-      <img class="card-img" src="../img/ciberseguridad.png" alt="Ciberseguridad">
-      <p>Protección integral contra amenazas digitales: asegura tus datos, sistemas y redes con monitoreo en tiempo real.</p>
-    </div>
+    <!-- Scripts -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script>
+        const API_URL = 'https://worthy-intuition-production.up.railway.app';
+        
+        // Cargar servicios dinámicos al iniciar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarServiciosDinamicos();
+            
+            // Verificar si el usuario está logueado
+            if (!localStorage.getItem("usuarioLogueado")) {
+                window.location.href = "login.html";
+            }
+        });
 
-    <div class="card">
-      <h3>Licencias de software</h3>
-      <img class="card-img" src="../img/licencias.png" alt="Licencias de software">
-      <p>Gestión y provisión de licencias originales para garantizar el uso legal, seguro y actualizado de tus aplicaciones.</p>
-    </div>
+        // Función para cargar servicios desde la API
+        async function cargarServiciosDinamicos() {
+            try {
+                console.log('🔗 Cargando servicios dinámicos desde:', `${API_URL}/api/servicios`);
+                const response = await fetch(`${API_URL}/api/servicios`);
+                
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+                
+                const servicios = await response.json();
+                console.log('✅ Servicios cargados:', servicios);
+                mostrarServiciosDinamicos(servicios);
+                
+            } catch (error) {
+                console.error('❌ Error al cargar servicios:', error);
+                document.getElementById('servicios-dinamicos').innerHTML = 
+                    '<div class="error">Error al cargar los servicios. Intenta más tarde.</div>';
+            }
+        }
 
-    <div class="card">
-      <h3>Consultoría IT</h3>
-      <img class="card-img" src="../img/consultoria.png" alt="Consultoría IT">
-      <p>Asesoría especializada para optimizar tu infraestructura tecnológica y alinear la estrategia con los objetivos del negocio.</p>
-    </div>
+        // Función para mostrar los servicios en la página
+        function mostrarServiciosDinamicos(servicios) {
+            const container = document.getElementById('servicios-dinamicos');
+            
+            if (!servicios || servicios.length === 0) {
+                container.innerHTML = '<div class="no-servicios">No hay servicios disponibles en este momento.</div>';
+                return;
+            }
 
-    <div class="card">
-      <h3>Análisis de datos</h3>
-      <img class="card-img" src="../img/analisis_datos.png" alt="Análisis de datos">
-      <p>Transformamos tus datos en información clara y accionable para impulsar decisiones estratégicas.</p>
-    </div>
+            container.innerHTML = servicios.map(servicio => `
+                <div class="card servicio-dinamico">
+                    ${servicio.promocion ? '<span class="promocion">🔥 EN PROMOCIÓN</span>' : ''}
+                    ${servicio.imagen ? 
+                        `<img src="${API_URL}${servicio.imagen}" alt="${servicio.nombre}" class="card-img">` : 
+                        `<img src="../img/servicio-default.png" alt="Servicio" class="card-img">`
+                    }
+                    <h3>${servicio.nombre}</h3>
+                    <div class="precio">$${servicio.precio ? servicio.precio.toLocaleString() : '0'}</div>
+                    <p>${servicio.descripcion || 'Sin descripción disponible'}</p>
+                    <small>Disponible: ${servicio.cantidad || '0'} unidades</small>
+                </div>
+            `).join('');
+        }
 
-    <div class="card">
-      <h3>Optimización SEO</h3>
-      <img class="card-img" src="../img/seo.png" alt="Optimización SEO">
-      <p>Mejoramos tu visibilidad en buscadores para atraer más tráfico orgánico y clientes potenciales a tu sitio web.</p>
-    </div>
+        // Función para cerrar sesión
+        function cerrarSesion() {
+            if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                localStorage.removeItem("usuarioLogueado");
+                window.location.href = "login.html";
+            }
+        }
 
-    <div class="card">
-      <h3>Soporte Técnico</h3>
-      <img class="card-img" src="../img/soporte_tecnico.png" alt="Soporte Técnico">
-      <p>Asistencia rápida y confiable para resolver incidencias y mantener tus sistemas siempre en funcionamiento.</p>
-    </div>
-
-    <div class="card">
-      <h3>Redes y Conectividad</h3>
-      <img class="card-img" src="../img/redes.png" alt="Redes y Conectividad">
-      <p>Diseño y gestión de infraestructuras de red seguras y eficientes para garantizar comunicación sin interrupciones.</p>
-    </div>
-
-    <div class="card">
-      <h3>Gestión de Infraestructura</h3>
-      <img class="card-img" src="../img/infraestructura.png" alt="Gestión de Infraestructura">
-      <p>Administramos y optimizamos tus recursos tecnológicos para garantizar disponibilidad, seguridad y rendimiento continuo.</p>
-    </div>
-  </div>
-
-  <!-- Botón centrado al final -->
-  <div class="more-info-wrap">
-    <a class="more-info-btn" href="../pages/Resumenservicios.html">Más información</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-container">
-    <div class="col">
-      <img src="../img/logo_transparente.png" alt="TecnoApps" class="footer-logo">
-      <h3>TecnoApps</h3>
-      <p class="footer-p">Empresa de desarrollo de aplicaciones móviles y web, diseño de páginas web y tiendas online en Colombia.</p>
-    </div>
-
-    <div class="col">
-      <h3 class="h3-serv">Servicios</h3>
-      <ul>
-        <li><a href="#">Desarrollo Web</a></li>
-        <li><a href="#">Soporte en la nube</a></li>
-        <li><a href="#">Ciberseguridad</a></li>
-        <li><a href="#">Licencias de software</a></li>
-        <li><a href="#">Consultoría IT</a></li>
-        <li><a href="#">Análisis de datos</a></li>
-        <li><a href="#">Optimización SEO</a></li>
-        <li><a href="#">Soporte técnico</a></li>
-        <li><a href="#">Redes y conectividad</a></li>
-        <li><a href="#">Gestión de infraestructura</a></li>
-      </ul>
-    </div>
-
-    <div class="col">
-      <h3>Contacto</h3>
-      <p class="footer-p">3173968717</p>
-      <p class="footer-p">nmogollon@poligran.edu.co</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-  <p class="copy">Copyright ©2025 TecnoApps | Todos los derechos reservados</p>
-</footer>
-
-<!-- Scripts -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script>
-  wow = new WOW({}).init();
-</script>
-<script>
-// Verificar si el usuario está logueado al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    if (!localStorage.getItem("usuarioLogueado")) {
-        window.location.href = "login.html";
-    }
-});
-
-// Función para cerrar sesión
-function cerrarSesion() {
-    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
-        localStorage.removeItem("usuarioLogueado");
-        window.location.href = "login.html";
-    }
-}
-</script>
-
+        // Inicializar WOW.js
+        wow = new WOW({}).init();
+    </script>
 </body>
 </html>
