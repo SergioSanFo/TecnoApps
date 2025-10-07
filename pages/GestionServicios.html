@@ -35,8 +35,6 @@
                       <span class="brand-text">TecnoApps</span>
                   </a>
               </div>
-              <!-- /.navbar-header -->
-              <!-- Menú -->
               <div class="collapse navbar-collapse" id="main-navbar">
                   <div class="menu">
                       <ul class="nav nav-tabs navbar-left" role="tablist">
@@ -46,17 +44,14 @@
                           <li role="presentation"><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
                       </ul>
                   </div>
-              </div><!-- /.navbar-collapse -->
-          </div><!-- /.container -->
+              </div>
+          </div>
       </nav>
   </header>
-
-  <!-- MAIN -->
   <main class="container">
       <h2>Gestión de servicios</h2>
       <button class="btn" id="btnNuevoServicio">➕ Agregar servicio</button>
 
-      <!-- FORM apilado -->
       <form class="form-stacked" id="formServicio">
           <div class="form-group">
               <label for="nombre">Nombre:</label>
@@ -115,13 +110,10 @@
                   </tr>
               </thead>
               <tbody id="tablaServicios">
-                  <!-- Los servicios se cargarán aquí dinámicamente -->
               </tbody>
           </table>
       </div>
   </main>
-
-  <!-- FOOTER -->
   <footer>
       <div class="footer-container">
           <div class="col">
@@ -253,7 +245,6 @@
       async function guardarServicio(e) {
           e.preventDefault();
           
-          // Usar FormData para enviar archivos e información
           const formData = new FormData();
           formData.append('nombre', document.getElementById('nombre').value);
           formData.append('precio', document.getElementById('precio').value);
@@ -278,14 +269,14 @@
                   console.log(`✏️ Actualizando servicio ID: ${editingId}`);
                   response = await fetch(`${API_URL}/api/servicios/${editingId}`, {
                       method: 'PUT',
-                      body: formData  // ¡NO usar headers con FormData!
+                      body: formData  
                   });
               } else {
                   // Crear
                   console.log('🆕 Creando nuevo servicio');
                   response = await fetch(`${API_URL}/api/servicios`, {
                       method: 'POST',
-                      body: formData  // ¡NO usar headers con FormData!
+                      body: formData  
                   });
               }
 
@@ -314,7 +305,7 @@
               return;
           }
 
-          editingId = servicio.id; // Usar el ID numérico del servicio
+          editingId = servicio.id;
           
           console.log('✏️ Editando servicio:', servicio);
           
